@@ -352,8 +352,8 @@
         </div>
         <p class="hero-note" data-i18n="heroNote"></p>
       </div>
-      <div class="frame" data-ph="Photo à ajouter — Boulevard du 17 Octobre, Médéa · assets/boulevard.png">
-        <img src="assets/boulevard.png" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/boulevard.svg'}else{this.hidden=true}" alt="Boulevard du 17 Octobre à Médéa, où se situe le cabinet">
+      <div class="frame" data-ph="Boulevard du 17 Octobre, Médéa">
+        <img data-img="boulevard" alt="Boulevard du 17 Octobre à Médéa, où se situe le cabinet">
       </div>
     </div>
   </section>
@@ -372,12 +372,12 @@
           <div class="cred-list" id="credentials"></div>
         </div>
         <div class="about-media">
-          <div class="frame" data-ph="Photo à ajouter — salle de consultation · assets/consultation.png">
-            <img src="assets/consultation.png" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/consultation.svg'}else{this.hidden=true}" alt="Salle de consultation du cabinet, avec table d'examen et échographe">
+          <div class="frame" data-ph="Salle de consultation">
+            <img data-img="consultation" alt="Salle de consultation du cabinet, avec table d'examen et échographe">
           </div>
           <div class="about-media-pair">
-            <div class="frame" data-ph="Photo — accueil · assets/accueil.png"><img src="assets/accueil.png" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/accueil.svg'}else{this.hidden=true}" alt="Accueil et couloir du cabinet"></div>
-            <div class="frame" data-ph="Photo — entrée / salle d'attente · assets/entree.png"><img src="assets/entree.png" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/entree.svg'}else{this.hidden=true}" alt="Entrée et salle d'attente du cabinet"></div>
+            <div class="frame" data-ph="Accueil"><img data-img="accueil" alt="Accueil et couloir du cabinet"></div>
+            <div class="frame" data-ph="Entrée / salle d'attente"><img data-img="entree" alt="Entrée et salle d'attente du cabinet"></div>
           </div>
           <p class="caption" data-i18n="photoCaption"></p>
         </div>
@@ -390,8 +390,8 @@
     <h2 class="section-title" data-i18n="servTitle"></h2>
     <p class="lead" data-i18n="servSub"></p>
     <div class="svc-grid" id="services"></div>
-    <div class="frame" data-ph="Photo à ajouter — bassin de balnéothérapie · assets/balneotherapie.png">
-      <img src="assets/balneotherapie.png" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/balneotherapie.svg'}else{this.hidden=true}" alt="Bassin de balnéothérapie du cabinet">
+    <div class="frame" data-ph="Bassin de balnéothérapie">
+      <img data-img="balneotherapie" alt="Bassin de balnéothérapie du cabinet">
     </div>
     <p class="caption" style="margin-top:12px" data-i18n="balneoCaption"></p>
   </section>
@@ -416,8 +416,8 @@
         </div>
         <a href="https://maps.app.goo.gl/N9jRemQMLbaQ8PJw8" target="_blank" rel="noopener" style="font-size:16px;font-weight:600" data-i18n-suffix=" →" data-i18n="mapsLink"></a>
         <div class="plan-box">
-          <div class="plan-img-wrap" data-ph="Plan d'accès à ajouter · assets/plan-acces.png">
-            <img src="assets/plan-acces.png" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/plan-acces.svg'}else{this.hidden=true}" alt="Plan d'accès dessiné : le centre se trouve en face de la Banque Centrale, à proximité du Théâtre de Médéa et de l'Hôpital central">
+          <div class="plan-img-wrap" data-ph="Plan d'accès">
+            <img data-img="plan-acces" alt="Plan d'accès dessiné : le centre se trouve en face de la Banque Centrale, à proximité du Théâtre de Médéa et de l'Hôpital central">
           </div>
           <p class="caption" data-i18n="planCaption"></p>
         </div>
@@ -828,10 +828,26 @@
     });
   }
 
+  // Charge assets/<nom>.jpg puis .png puis .svg ; sinon laisse le cadre de remplacement CSS.
+  function initImages() {
+    var EXT = ["jpg", "png", "svg"];
+    document.querySelectorAll("img[data-img]").forEach(function (img) {
+      var base = "assets/" + img.getAttribute("data-img") + ".";
+      var i = 0;
+      img.addEventListener("error", function () {
+        i++;
+        if (i < EXT.length) { img.src = base + EXT[i]; }
+        else { img.hidden = true; }
+      });
+      img.src = base + EXT[0];
+    });
+  }
+
   function init() {
     currentLang = getLang();
     render(currentLang);
     initForm();
+    initImages();
     document.getElementById("langToggle").addEventListener("click", function () {
       setLang(currentLang === "ar" ? "fr" : "ar");
     });
