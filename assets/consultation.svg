@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Photo à ajouter : salle de consultation">
+  <rect width="1200" height="900" fill="#E9EEF4"/>
+  <g fill="none" stroke="#2A6FA8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
+    <rect x="430" y="400" width="340" height="120" rx="14"/>
+    <line x1="470" y1="520" x2="470" y2="590"/>
+    <line x1="730" y1="520" x2="730" y2="590"/>
+    <path d="M430 430 h-70 v-90"/>
+    <circle cx="360" cy="320" r="26"/>
+  </g>
+  <text x="600" y="700" text-anchor="middle" font-family="'IBM Plex Sans Arabic', system-ui, sans-serif" font-size="34" font-weight="600" fill="#6B7684">Salle de consultation</text>
+  <text x="600" y="744" text-anchor="middle" font-family="'IBM Plex Sans Arabic', system-ui, sans-serif" font-size="24" fill="#98A2AE">Remplacer par une photo réelle · assets/consultation.png</text>
+</svg>

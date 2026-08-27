@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 600" role="img" aria-label="Photo à ajouter : bassin de balnéothérapie">
+  <rect width="1400" height="600" fill="#E4EDF3"/>
+  <g fill="none" stroke="#2A6FA8" stroke-width="7" stroke-linecap="round" opacity="0.5">
+    <path d="M300 330 q40 -34 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0"/>
+    <path d="M300 390 q40 -34 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0"/>
+    <rect x="360" y="200" width="680" height="240" rx="20"/>
+  </g>
+  <text x="700" y="500" text-anchor="middle" font-family="'IBM Plex Sans Arabic', system-ui, sans-serif" font-size="34" font-weight="600" fill="#6B7684">Bassin de balnéothérapie</text>
+  <text x="700" y="542" text-anchor="middle" font-family="'IBM Plex Sans Arabic', system-ui, sans-serif" font-size="24" fill="#98A2AE">Remplacer par une photo réelle · assets/balneotherapie.png</text>
+</svg>

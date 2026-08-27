@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Photo à ajouter : accueil du cabinet">
+  <rect width="1200" height="1200" fill="#E9EEF4"/>
+  <g fill="none" stroke="#2A6FA8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
+    <path d="M360 720 h480 v-90 a90 90 0 0 0 -90 -90 h-300 a90 90 0 0 0 -90 90 z"/>
+    <line x1="360" y1="720" x2="360" y2="820"/>
+    <line x1="840" y1="720" x2="840" y2="820"/>
+    <circle cx="600" cy="430" r="55"/>
+  </g>
+  <text x="600" y="940" text-anchor="middle" font-family="'IBM Plex Sans Arabic', system-ui, sans-serif" font-size="44" font-weight="600" fill="#6B7684">Accueil</text>
+  <text x="600" y="1000" text-anchor="middle" font-family="'IBM Plex Sans Arabic', system-ui, sans-serif" font-size="30" fill="#98A2AE">assets/accueil.png</text>
+</svg>
